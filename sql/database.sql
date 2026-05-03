@@ -1,0 +1,1 @@
+CREATE DATABASE otel_rezervasyon;

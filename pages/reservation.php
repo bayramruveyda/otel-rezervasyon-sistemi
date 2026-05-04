@@ -1,5 +1,14 @@
 <?php
 session_start();
+if (!isset($_SESSION["user"])) {
+    header("Location: ../login.php");
+    exit();
+}
+?>
+
+
+<?php
+session_start();
 include "../db/connection.php";
 
 $room_id = $_GET["room_id"];

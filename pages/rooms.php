@@ -1,4 +1,13 @@
 <?php
+session_start();
+if (!isset($_SESSION["user"])) {
+    header("Location: ../login.php");
+    exit();
+}
+?>
+
+
+<?php
 include "../db/connection.php";
 
 $sql = "SELECT * FROM rooms";
@@ -21,9 +30,12 @@ $result = mysqli_query($conn, $sql);
             <a href="my_reservations.php">Rezervasyonlar</a>
             <a href="../logout.php">Çıkış</a>
         </div>
+
     </div>
 </div>
-
+<p style="text-align:center;">
+Hoşgeldin, <?php echo $_SESSION["user"]; ?>
+</p>
 <div class="container rooms">
     <h2>Oda Listesi</h2>
 

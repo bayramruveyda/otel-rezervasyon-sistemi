@@ -50,3 +50,9 @@ button {
     color: white;
     border: none;
 }
+.nav-links a.active {
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+    padding-bottom: 4px;
+}

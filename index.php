@@ -1,1 +1,4 @@
-<?php echo "Ana sayfa"; ?>
+<?php
+header("Location: login.php");
+exit();
+?>

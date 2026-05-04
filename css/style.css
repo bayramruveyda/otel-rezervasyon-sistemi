@@ -56,3 +56,54 @@ button {
     border-bottom: 2px solid white;
     padding-bottom: 4px;
 }
+.hero {
+    width: 85%;
+    margin: 40px auto 20px;
+    padding: 45px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.search-box {
+    width: 75%;
+    margin: -10px auto 30px;
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.search-box div {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-box span {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.search-box b {
+    color: #111827;
+}
+
+.search-box button {
+    width: 140px;
+    margin-top: 0;
+}
+
+.welcome-text {
+    text-align: center;
+    color: #374151;
+    font-weight: bold;
+}

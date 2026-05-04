@@ -1,13 +1,12 @@
+
 <?php
 session_start();
+
 if (!isset($_SESSION["user"])) {
     header("Location: ../login.php");
     exit();
 }
-?>
 
-
-<?php
 include "../db/connection.php";
 
 $sql = "SELECT * FROM rooms";
@@ -15,8 +14,9 @@ $result = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
+    <meta charset="UTF-8">
     <title>Odalar</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -30,12 +30,37 @@ $result = mysqli_query($conn, $sql);
             <a href="my_reservations.php">Rezervasyonlar</a>
             <a href="../logout.php">Çıkış</a>
         </div>
-
     </div>
 </div>
-<p style="text-align:center;">
-Hoşgeldin, <?php echo $_SESSION["user"]; ?>
+
+<div class="hero">
+    <h1>Konforlu Konaklama Deneyimi</h1>
+    <p>Size en uygun odayı seçin ve rezervasyonunuzu kolayca oluşturun.</p>
+</div>
+
+<div class="search-box">
+    <div>
+        <span>Giriş</span>
+        <b>Bugün</b>
+    </div>
+
+    <div>
+        <span>Çıkış</span>
+        <b>Yarın</b>
+    </div>
+
+    <div>
+        <span>Misafir</span>
+        <b>2 Yetişkin</b>
+    </div>
+
+    <button type="button">Oda Ara</button>
+</div>
+
+<p class="welcome-text">
+    Hoşgeldin, <?php echo $_SESSION["user"]; ?>
 </p>
+
 <div class="container rooms">
     <h2>Oda Listesi</h2>
 
@@ -56,13 +81,12 @@ Hoşgeldin, <?php echo $_SESSION["user"]; ?>
                     <button class='reserve-btn'>Rezervasyon Yap</button>
                   </a>";
         } else {
-            echo "<button class='reserve-btn' disabled style='background: gray;'>Dolu</button>";
+            echo "<button class='reserve-btn' disabled>Dolu</button>";
         }
 
         echo "</div>";
     }
     ?>
-
 </div>
 
 </body>
